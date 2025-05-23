@@ -1,9 +1,8 @@
 # time parameters
 hours = 2
-minutes = 60
 
 # conversion of 2 hours to seconds
-seconds = (60 * minutes) * hours
+seconds = hours * 3600
 
 # output of calculation
 print(hours, "hours(s) is", seconds, "seconds" )
