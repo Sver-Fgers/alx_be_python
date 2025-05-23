@@ -1,5 +1,5 @@
 # collect input from user
-current_age = int(input("How old are you?\n"))
+current_age = int(input("How old are you?"))
 
 # calculate user age in the future
 current_year = 2023
