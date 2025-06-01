@@ -1,14 +1,17 @@
-# this script ask the user about the current weather conditions
-# and provides clothing recommendations based on the input
+"""
+This script prompts the user for the current weather and provides clothing
+recommendations using if, elif, and else statements.
+"""
 
-# collect user input
-user_input = input("What's the weather like today? (sunny/rainy/cold):")
+# Prompt the user for weather condition
+weather = input("What's the weather like today? (sunny/rainy/cold): ").lower()
 
-if user_input == "sunny":
-    print("Wear a t-shirt and sunglasses")
-elif user_input == "rainy":
+# Provide clothing advice based on weather
+if weather == "sunny":
+    print("Wear a t-shirt and sunglasses.")
+elif weather == "rainy":
     print("Don't forget your umbrella and a raincoat.")
-elif user_input == "cold":
-    print("Make sure to wear a warm coat and a scarf.")    
+elif weather == "cold":
+    print("Make sure to wear a warm coat and a scarf.")
 else:
     print("Sorry, I don't have recommendations for this weather.")
