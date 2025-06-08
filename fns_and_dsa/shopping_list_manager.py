@@ -16,14 +16,14 @@ def main():
 
         if choice == '1':
             # Prompt for and add an item
-            item = input("Enter the item you want to add: ").strip()
+            item = input("Enter the item to add: ").strip()
             # add user item to shopping list
             shopping_list.append(item)
             print(f"'{item}' has been added to your shopping list.\n")
         
         elif choice == '2':
             # Prompt for and remove an item
-            item = input("Enter the item you want to remove: ").strip()
+            item = input("Enter the item to remove: ").strip()
             # remove user item from shopping list
             if item in shopping_list:
                 shopping_list.remove(item)
