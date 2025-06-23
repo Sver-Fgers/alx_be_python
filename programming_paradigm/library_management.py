@@ -13,23 +13,31 @@ class Book:
         self.author = author
         self._is_checked_out = False  # Private attribute
     
-    def check_out(self):
-        """Mark the book as checked out if available."""
-        if not self._is_checked_out:
-            self._is_checked_out = True
-            return True
-        return False
-    
-    def return_book(self):
-        """Mark the book as returned if it was checked out."""
-        if self._is_checked_out:
-            self._is_checked_out = False
-            return True
-        return False
-    
     def is_available(self):
         """Return availability status of the book."""
         return not self._is_checked_out
+
+    def check_out(self):
+        """Mark the book as checked out if available."""
+        if not self._is_checked_out: # if the book is checked out
+            self._is_checked_out = True # mark it as checked out
+            return True
+        return False
+
+    def return_book(self):
+        """Mark the book as returned if it was checked out."""
+        if self._is_checked_out:       # Check if book is currently checked out
+            self._is_checked_out = False  # Mark it as returned
+            return True                # Return success status
+        return False                   # Return failure status
+        
+    """
+    Imagine a physical library:
+        A book is checked out (_is_checked_out = True)
+        Someone tries to return it:
+            If it was checked out: The librarian accepts it (returns True)
+            If it was already on shelf: The librarian says "This wasn't checked out!" (returns False)
+    """
     
     def __str__(self):
         """String representation of the book."""
