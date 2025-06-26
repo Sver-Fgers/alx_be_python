@@ -5,14 +5,13 @@ class Book:
     """A class representing a book in a library system."""
     
     def __init__(self, title, author):
-        """
-        Initialize a Book with title and author.
-        Books start as available (not checked out).
-        """
+        
+    # Initialize a Book with title and author.
         self.title = title
         self.author = author
-        self._is_checked_out = False  # Private attribute
+        self._is_checked_out = False  # Private attribute to check availability of book
     
+    # Books start as available (not checked out).
     def is_available(self):
         """Return availability status of the book."""
         return not self._is_checked_out
@@ -39,9 +38,16 @@ class Book:
             If it was already on shelf: The librarian says "This wasn't checked out!" (returns False)
     """
     
+    # Controls how the object appears when printed
+    # Makes output more user-friendly than Python's default object display
     def __str__(self):
         """String representation of the book."""
         return f"{self.title} by {self.author}"
+
+    # eg
+    # book = Book("The Hobbit", "J.R.R. Tolkien")
+    # print(book)  
+    # Output: "The Hobbit by J.R.R. Tolkien"
 
 
 class Library:
@@ -56,7 +62,7 @@ class Library:
         if isinstance(book, Book):
             self._books.append(book)
         else:
-            raise ValueError("Can only add Book objects to the library")
+            raise ValueError("Can only add Books to the library")
     
     def check_out_book(self, title):
         """
